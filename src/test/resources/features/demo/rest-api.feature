@@ -17,3 +17,9 @@ Feature: Demo rest api features with github
       | username | expectedRepo           |
       | mrduguo  | gradle-buildscript     |
       | mrduguo  | gradle-sample-cucumber |
+
+  Scenario: verify api rate limit
+    Given REST base url https://api.github.com/
+    When REST GET /rate_limit
+    Then REST status 200
+    And REST json path rate.limit=60

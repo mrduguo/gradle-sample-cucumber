@@ -1,13 +1,18 @@
 package steps.network
 
+import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
+import steps.AbstractDefs
 
 import java.util.concurrent.TimeUnit
 
-class BasicNetworkSteps {
+class BasicNetworkSteps extends AbstractDefs {
 
     String status
+
+    @Given('^NET LOADED$')
+    def load() {}
 
     @When('^NET ping (.*)$')
     def ping(String address) {
@@ -24,19 +29,19 @@ class BasicNetworkSteps {
     }
 
     @When('^NET telnet (.*) (\\d*)$')
-    def telnet(String address,int port) {
+    def telnet(String address, int port) {
         try {
             new Socket(address, port)
-            status='success'
-        }catch (UnknownHostException e) {
-            status="unknown_host"
-        }catch (IOException e) {
-            status='port_not_open'
+            status = 'success'
+        } catch (UnknownHostException e) {
+            status = "unknown_host"
+        } catch (IOException e) {
+            status = 'port_not_open'
         }
     }
 
-    @Then('^NET action should (\\w*)$')
-    def actionCheck(String expectedStatus) {
-        assert status==expectedStatus
+    @Then('^NET status should (\\w*)$')
+    def statusShouldBe(String expectedStatus) {
+        assert status == expectedStatus
     }
 }

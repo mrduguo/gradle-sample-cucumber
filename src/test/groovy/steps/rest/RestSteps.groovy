@@ -4,11 +4,17 @@ import com.jayway.restassured.RestAssured
 import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
+import steps.AbstractDefs
 
-class RestSteps {
+class RestSteps  extends AbstractDefs {
 
     def request = RestAssured.with()
     def response
+
+
+    @Given('^REST LOADED$')
+    def load() {}
+
 
     @Given('^REST base url (.*)$')
     def setRestBaseUrl(String baseUrl) {
@@ -28,7 +34,7 @@ class RestSteps {
 
     @Then('^REST json path (.*)=(.*)$')
     def thenRestHasJsonPath(String path, String value) {
-        assert response.path(path)==value
+        assert response.path(path)?.toString()==value
     }
 
     @Then('^REST has item (.*)=(.*)$')

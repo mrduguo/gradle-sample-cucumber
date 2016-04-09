@@ -2,7 +2,7 @@ Feature: Demo network ping features with google
 
   Scenario Outline: ping google
     When NET ping <address>
-    Then NET action should <result>
+    Then NET status should <result>
     Examples:
       | address                   | result  |
       | 127.0.0.1                 | success |
@@ -12,7 +12,7 @@ Feature: Demo network ping features with google
 
   Scenario Outline: telnet google
     When NET telnet <address> <port>
-    Then NET action should <result>
+    Then NET status should <result>
     Examples:
       | address                   | port | result        |
       | 8.8.8.8                   | 53   | success       |

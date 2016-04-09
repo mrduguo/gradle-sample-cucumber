@@ -1,0 +1,14 @@
+services:
+  pingService:
+    - host: 127.0.0.1
+    - host: api.github.com
+      port: 443
+  telnetService:
+    - host: 127.0.0.1
+    - host: api.github.com
+      port: 443
+  restService:
+    - host: 127.0.0.1
+    - host: api.github.com
+      port: 443
+      health: /rate_limit

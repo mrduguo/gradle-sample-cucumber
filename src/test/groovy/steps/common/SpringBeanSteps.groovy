@@ -1,4 +1,4 @@
-package steps.spring
+package steps.common
 
 import app.Foo
 import cucumber.api.java.en.When

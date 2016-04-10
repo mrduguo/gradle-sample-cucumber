@@ -1,14 +1,10 @@
-package steps.service
+package steps.common
 
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
-import groovy.util.logging.Log
 import org.springframework.beans.factory.annotation.Autowired
 import steps.AbstractDefs
-import steps.network.BasicNetworkSteps
-import steps.rest.RestSteps
 
-@Log
 class ServiceSteps extends AbstractDefs {
 
 

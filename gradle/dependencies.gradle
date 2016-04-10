@@ -1,11 +1,11 @@
 dependencies {
     testCompile "org.codehaus.groovy:groovy-all:$libGroovyVersion"
+    testCompile "org.springframework.boot:spring-boot-starter:$libSpringBootVersion"
+    testCompile "org.springframework.boot:spring-boot-starter-test:$libSpringBootVersion"
+    testCompile "org.springframework:spring-tx:$libSpringFrameworkVersion"
     testCompile "info.cukes:cucumber-core:$libCucumberVersion"
     testCompile "info.cukes:cucumber-spring:$libCucumberVersion"
     testCompile "info.cukes:cucumber-junit:$libCucumberVersion"
-    testCompile "org.springframework:spring-tx:$libSpringFrameworkVersion"
-    testCompile "org.springframework.boot:spring-boot-starter:$libSpringBootVersion"
-    testCompile "org.springframework.boot:spring-boot-starter-test:$libSpringBootVersion"
     testCompile 'com.jayway.restassured:rest-assured:2.9.0'
     testCompile 'org.gebish:geb-core:0.13.1'
     testCompile 'org.seleniumhq.selenium:selenium-firefox-driver:2.52.0'

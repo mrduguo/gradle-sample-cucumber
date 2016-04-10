@@ -9,6 +9,11 @@ class EnvConfig {
 
     @Bean
     def testEnv(){
-        new Yaml().loadAs(getClass().getResourceAsStream("/${System.properties.testEnv?:'ci'}-environment.yml"),Map.class)
+        new Yaml().loadAs(
+                getClass().getResourceAsStream(
+                        "/${System.properties.testEnv?:System.getenv().testEnv?:'ci'}-environment.yml"
+                ),
+                Map.class
+        )
     }
 }

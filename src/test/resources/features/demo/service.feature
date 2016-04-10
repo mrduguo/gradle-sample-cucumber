@@ -1,9 +1,4 @@
-Feature: Demo service network verification features
-
-  Background:
-    Given NET LOADED
-    And REST LOADED
-
+Feature: Demo service basic verification features
 
   Scenario: verify ping services
     When SERVICE select pingService

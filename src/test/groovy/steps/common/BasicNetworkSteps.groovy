@@ -1,4 +1,4 @@
-package steps.network
+package steps.common
 
 import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
@@ -10,9 +10,6 @@ import java.util.concurrent.TimeUnit
 class BasicNetworkSteps extends AbstractDefs {
 
     String status
-
-    @Given('^NET LOADED$')
-    def load() {}
 
     @When('^NET ping (.*)$')
     def ping(String address) {

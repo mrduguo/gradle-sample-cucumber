@@ -1,4 +1,4 @@
-package steps.rest
+package steps.common
 
 import com.jayway.restassured.RestAssured
 import cucumber.api.java.en.Given
@@ -10,11 +10,6 @@ class RestSteps  extends AbstractDefs {
 
     def request = RestAssured.with()
     def response
-
-
-    @Given('^REST LOADED$')
-    def load() {}
-
 
     @Given('^REST base url (.*)$')
     def setRestBaseUrl(String baseUrl) {

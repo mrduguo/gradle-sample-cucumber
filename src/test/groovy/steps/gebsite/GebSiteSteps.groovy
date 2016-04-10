@@ -16,7 +16,6 @@ class GebSiteSteps extends AbstractBrowserDefs {
 
     @When('^GEBSITE go home page$')
     def goHomePage() {
-        browser.baseUrl='http://www.gebish.org'
         browser.to GebishOrgHomePage
     }
 

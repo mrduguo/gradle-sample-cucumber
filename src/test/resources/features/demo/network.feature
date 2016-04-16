@@ -15,7 +15,6 @@ Feature: Demo network ping features with google
     Then NET status should <result>
     Examples:
       | address                   | port | result        |
-      | 8.8.8.8                   | 53   | success       |
       | www.google.ie             | 80   | success       |
       | www.google.ie             | 443  | success       |
       | 127.0.0.1                 | 9988 | port_not_open |

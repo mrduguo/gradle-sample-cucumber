@@ -2,11 +2,13 @@ package steps.common
 
 import cucumber.api.java.en.Given
 import cucumber.api.java.en.When
-import geb.Browser
 import steps.AbstractBrowserDefs
-import steps.AbstractDefs
 
 class BrowserSteps extends AbstractBrowserDefs {
+
+    @Given('^BROWSER LOADED$')
+    def loadBrowserSteps() {
+    }
 
     @Given('^BROWSER base url (.*)$')
     def setBaseUrl(String baseUrl) {

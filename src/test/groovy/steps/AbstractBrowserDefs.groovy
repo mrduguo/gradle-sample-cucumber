@@ -13,7 +13,7 @@ abstract class AbstractBrowserDefs extends AbstractDefs {
             def conf = new ConfigurationLoader().getConf()
             conf.reportsDir = new File('build/reports/browser-screenshot')
             browser = new Browser(conf)
-            if (System.properties.BROWSER_FIREFOX_DRIVER == 'true') {
+            if (config('BROWSER_FIREFOX_DRIVER') == 'true') {
                 // default is firefox
             } else {
                 browser.driver = BrowserPhantomJSInstaller.usePhantomJS()

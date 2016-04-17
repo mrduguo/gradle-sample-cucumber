@@ -27,7 +27,7 @@ class BrowserPhantomJSInstaller {
         String execFilePath
 
         if (Platform.current.is(Platform.WINDOWS)) {
-            execFilePath = 'phantomjs.exe'
+            execFilePath = '/bin/phantomjs.exe'
             platform = 'windows'
             archiveExtension = 'zip'
         } else if (Platform.current.is(Platform.MAC)) {

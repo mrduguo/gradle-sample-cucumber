@@ -11,4 +11,14 @@ abstract class AbstractDefs
 {
     @Autowired
     ApplicationContext applicationContext
+
+    String config(String key,String defaultValue=null){
+        if(System.properties.containsKey(key)){
+            System.properties[key]
+        }else if(System.getenv().containsKey(key)){
+            System.getenv()[key]
+        }else{
+            defaultValue
+        }
+    }
 }

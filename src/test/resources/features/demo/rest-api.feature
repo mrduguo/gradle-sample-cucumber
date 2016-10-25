@@ -4,8 +4,8 @@ Feature: Demo rest api features with github
     Given REST base url https://api.github.com/
     When REST GET /repos/mrduguo/gradle-sample-cucumber
     Then REST status 200
-    And REST json path owner.login=mrduguo
-    And REST json path html_url=https://github.com/mrduguo/gradle-sample-cucumber
+    And REST contains path owner.login=mrduguo
+    And REST contains path html_url=https://github.com/mrduguo/gradle-sample-cucumber
 
 
   Scenario Outline: list user repos
@@ -18,8 +18,14 @@ Feature: Demo rest api features with github
       | mrduguo  | gradle-buildscript     |
       | mrduguo  | gradle-sample-cucumber |
 
-  Scenario: verify api rate limit
+  Scenario: verify api rate limit verify by json path
     Given REST base url https://api.github.com/
     When REST GET /rate_limit
     Then REST status 200
-    And REST json path rate.limit=60
+    And REST contains path rate.limit=60
+
+  Scenario: verify api rate limit verify by text
+    Given REST base url https://api.github.com/
+    When REST GET /rate_limit
+    Then REST status 200
+    And REST contains text "rate":{"limit":60

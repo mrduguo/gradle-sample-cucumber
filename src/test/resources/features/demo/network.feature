@@ -1,6 +1,6 @@
-Feature: Demo network ping features with google
+Feature: Demo network ping features
 
-  Scenario Outline: ping google
+  Scenario Outline: ping server
     When NET ping <address>
     Then NET status should <result>
     Examples:
@@ -10,7 +10,7 @@ Feature: Demo network ping features with google
       | www.google.ie             | success |
       | www.notexisting-google.ie | failed  |
 
-  Scenario Outline: telnet google
+  Scenario Outline: telnet server
     When NET telnet <address> <port>
     Then NET status should <result>
     Examples:
